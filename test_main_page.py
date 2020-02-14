@@ -4,6 +4,7 @@ from .pages.basket_page import BasketPage
 import pytest
 
 
+@pytest.mark.skip
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)
@@ -14,6 +15,7 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page.should_be_text_for_empty_basket()
 
 
+@pytest.mark.skip
 @pytest.mark.login_guest
 class TestLoginGuest(object):
     def test_guest_can_go_to_login_page(self, browser):
